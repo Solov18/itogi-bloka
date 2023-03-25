@@ -2,6 +2,16 @@
 int size = 10;
 string[] arrayOne = new string[size];
 FillRandArr(arrayOne);
+if (GetSizeOfSecondArray(arrayOne) == 0){Console.WriteLine("искомых элементов строкового масива для переноса в новый массив - нет");}
+else
+{   
+    Console.Clear();
+    Console.WriteLine($"Перед вами строковый массив, заполненный рандомными занчениями, и новый массив, впитавщий в себя элементы предудещего массива, длина которых равна трём или менее символов:");
+    Console.WriteLine();
+    string[] arrayTwo = 
+    Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
+    Console.WriteLine();
+}
 
 void FillRandArr(string[] arr)
 {
@@ -15,4 +25,16 @@ void FillRandArr(string[] arr)
             arr[i] += AllSymbols[rand.Next(0,AllSymbols.Length)];
         }        
     }
+}
+int GetSizeOfSecondArray(string[] arr)
+{   
+    int secondSize = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if(arr[i].Length < n)
+        {
+            secondSize++;
+        }
+    }
+    return secondSize;
 }
