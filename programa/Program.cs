@@ -6,7 +6,7 @@ if (GetSizeOfSecondArray(arrayOne) == 0){Console.WriteLine("искомых эл�
 else
 {   
     Console.Clear();
-    Console.WriteLine($"Перед вами строковый массив, заполненный рандомными занчениями, и новый массив, впитавщий в себя элементы предудещего массива, длина которых равна трём или менее символов:");
+    Console.WriteLine($"Массив, заполненный рандомными занчениями, и новый массив, содержит в себе элементы предудещего массива, длина которых равна трём или менее символов:");
     Console.WriteLine();
     string[] arrayTwo = RotateElemOfArr(arrayOne);
     Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
@@ -37,4 +37,17 @@ int GetSizeOfSecondArray(string[] arr)
         }
     }
     return secondSize;
+}
+string[] RotateElemOfArr(string[] arr)
+{
+    string[] arrayTwo = new string[GetSizeOfSecondArray(arrayOne)];
+    for (int i = 0, j = 0; i < size; i++)
+    {
+        if(arr[i].Length < n)
+        {
+            arrayTwo[j] = arr[i];
+            j++;
+        }
+    }
+    return arrayTwo;
 }
