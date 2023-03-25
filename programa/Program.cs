@@ -1,4 +1,4 @@
-﻿
+﻿int n = 4;
 int size = 10;
 string[] arrayOne = new string[size];
 FillRandArr(arrayOne);
@@ -8,7 +8,7 @@ else
     Console.Clear();
     Console.WriteLine($"Перед вами строковый массив, заполненный рандомными занчениями, и новый массив, впитавщий в себя элементы предудещего массива, длина которых равна трём или менее символов:");
     Console.WriteLine();
-    string[] arrayTwo = 
+    string[] arrayTwo = RotateElemOfArr(arrayOne);
     Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
     Console.WriteLine();
 }
